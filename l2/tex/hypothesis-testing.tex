@@ -1,0 +1,28 @@
+\section{Hypothesis Testing}
+Here suppose our null hypothesis is $H_0: \mu = \mu_0$ Random variable $X$ is sampled from normal distribution with known mean and unknown variance, therefore the statistics $T = \frac{\sqrt{n}(\bar{X} - \mu_0)}{\hat{\sigma}}$ is from Student's $t$-distribution with $n-1$ degree of freedom.
+\subsection{One-sided $H_1$}
+\begin{itemize}
+	\item The alternative hypothesis is $H_1: \mu > \mu_0$. 
+	\item Reject $H_0$ if $T > t_{n-1, 1-\alpha}$.
+	\item Type I error: $\alpha = P_{\mu_0} (T > t_{n-1, 1-\alpha})$
+	\item Acceptance region: $T < t_{n-1, 1-\alpha}$.
+	\begin{align*}
+		1 - \alpha 
+		&= P(\frac{(\sqrt{n}\bar{X} - \mu_0)}{\hat{\sigma}} \le t_{n-1, 1-\alpha})\\
+		&= P(\bar{X} - t_{n-1, 1-\alpha} \frac{\hat{\sigma}}{\sqrt{n}} \le \mu_0)
+	\end{align*}
+\end{itemize}
+
+\subsection{Two-sided $H_1$}
+\begin{itemize}
+	\item The alternative hypothesis is $H_1: \mu \neq \mu_0$. 
+	\item Reject $H_0$ if $|T| > t_{n-1, 1-\alpha}$: $T > t_{n-1, 1-\alpha}$ or $T < - t_{n-1, 1-\alpha}$.
+
+	\item Acceptance region: $ \frac{\sqrt{n}|\bar{X} - \mu_0|}{\hat{\sigma}} < t_{n-1, 1-\alpha}$.
+	\begin{align*}
+		1 - \alpha 
+		&= P(\frac{\sqrt{n}|\bar{X} - \mu_0|}{\hat{\sigma}} \le t_{n-1, 1-\alpha})\\
+		&= P(-t_{n-1, 1-\alpha} \le \frac{\sqrt{n}(\bar{X} - \mu_0)}{\hat{\sigma}} \le t_{n-1, 1-\alpha})\\
+		&= P(\bar{X}-t_{n-1, 1-\alpha} \frac{\hat{\sigma}}{\sqrt{n}} \le \mu_0 \le \bar{X} + t_{n-1, 1-\alpha} \frac{\hat{\sigma}}{\sqrt{n}})
+	\end{align*}
+\end{itemize}
