@@ -8,7 +8,8 @@ FILE_NAMES=("2-hypothesis-testing" \
 "3-binomial-distribution" \
 "4-sign-test-wilcoxon-signed-rank-test" \
 "5-wilconxon-rank-sum-test-rs-test" \
-"6-ansari-bradley-test-kruskal-wallis-test")
+"6-ansari-bradley-test-kruskal-wallis-test" \
+"7-friedman-rank-test")
 
 mkdir "$DIRECTORY/$TARGET_DIR"
 for the_file in "$DIRECTORY"/l*/main.pdf; do
