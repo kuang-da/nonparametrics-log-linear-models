@@ -9,7 +9,9 @@ FILE_NAMES=("2-hypothesis-testing" \
 "4-sign-test-wilcoxon-signed-rank-test" \
 "5-wilconxon-rank-sum-test-rs-test" \
 "6-ansari-bradley-test-kruskal-wallis-test" \
-"7-friedman-rank-test")
+"7-friedman-rank-test" \
+"8-kendall-spearman-corrlation-coefficient-cohen-kappa" \
+"9-prop-in-tabble-chi-squared-test")
 
 mkdir "$DIRECTORY/$TARGET_DIR"
 for the_file in "$DIRECTORY"/l*/main.pdf; do
@@ -20,4 +22,4 @@ for the_file in "$DIRECTORY"/l*/main.pdf; do
     cp "$the_file" "$DIRECTORY/$TARGET_DIR/${FILE_NAMES[$idx]}.pdf"
 done
 
-git push
+# git push
