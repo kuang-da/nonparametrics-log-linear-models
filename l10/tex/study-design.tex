@@ -1,0 +1,20 @@
+\section{Review: Study Design}
+\subsection{Conditional Design}
+When the rows of a contingency table refer to different groups,
+the sample sizes for those groups are often fixed by the sampling
+design. We assume a binomial distribution for the sample in
+each row, with number of trials equal to the fixed row total.
+
+When the columns are a response variable $Y$ and the rows are
+an explanatory variable $X$, it is sensible to divide the cell counts
+by the row totals to form conditional distributions on the
+response. In doing so, we inherently treat the row totals as fixed
+and analyze the data the same way as if the two rows formed
+separate samples.
+
+\subsection{Unconditional Design}
+When the total sample size n is fixed and we cross classify the
+sample on two categorical response variables, the multinomial
+distribution is the actual joint distribution over the cells. The
+cells of the contingency table are the possible outcomes, and the
+cell probabilities are the multinomial parameters.

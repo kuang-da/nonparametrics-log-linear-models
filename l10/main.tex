@@ -1,0 +1,80 @@
+%\documentclass[en,hazy,blue,screen,14pt]{elegantnote}
+\documentclass[en,hazy,blue]{elegantnote}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+% \usepackage[USenglish]{babel}
+\usepackage{babel}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage[ruled,vlined]{algorithm2e}
+\PassOptionsToPackage{normalem}{ulem}
+\usepackage{ulem}
+\usepackage{mathtools}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{listings}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Math Symbols
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\>}{{\rightarrow}}
+\renewcommand{\hat}{\widehat}
+\renewcommand{\tilde}{\widetilde}
+\newcommand{\half}{\frac{1}{2}}
+%
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\N}{{\mathbb N}}
+\renewcommand{\P}{{\mathbf P}}
+\newcommand{\E}{{\mathbf E}}
+\newcommand{\Var}{{\mathbf{Var}}}
+\newcommand{\I}{{\mathbf I}}
+\newcommand{\1}{{\mathbf 1}}
+\newcommand{\0}{{\mathbf 0}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Code Style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstset{
+	numbers=left, 
+	numberstyle=\small, 
+	numbersep=8pt, 
+	frame = single, 
+	framexleftmargin=15pt,
+	breaklines=true,
+	columns=fullflexible
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theorem
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\qedsymbol{$\blacksquare$}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
+\newenvironment{claimproof}[1]{\par\noindent\underline{Proof:}\space#1}{\hfill $\blacksquare$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Class Notes: STAT 501\\ Nonparametrics \& Log-Linear Models\\ Relative Risk, Odds Ratio, \\Fisher's Exact Test of 2x2 Tables
+}
+\author{Da Kuang}
+\institute{University of Pennsylvania}
+% \version{1.00}
+\date{}
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+
+\newpage   
+\input{tex/relative-risk.tex}
+\input{tex/study-design.tex}
+\input{tex/odds-ratio.tex}
+\input{tex/odds-ratio-property.tex}
+\input{tex/fisher-exact-test.tex}
+\end{document}

@@ -11,7 +11,8 @@ FILE_NAMES=("2-hypothesis-testing" \
 "6-ansari-bradley-test-kruskal-wallis-test" \
 "7-friedman-rank-test" \
 "8-kendall-spearman-corrlation-coefficient-cohen-kappa" \
-"9-prop-in-tabble-chi-squared-test")
+"9-prop-in-tabble-chi-squared-test" \
+"10-odds-ratio-fisher-exact")
 
 mkdir "$DIRECTORY/$TARGET_DIR"
 for the_file in "$DIRECTORY"/l*/main.pdf; do

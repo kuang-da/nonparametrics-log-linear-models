@@ -1,0 +1,93 @@
+\section{Properties of Odds Ratio}
+\subsection{Directed Association}
+The odds ratio $\theta$ measures the strength of association between $X$ and $Y$.
+\begin{itemize}
+	\item $1 < \theta < \infty$ implies that the odds of $Y = 1$, given that $X = 1$, is larger than the odds that $Y = 1$, given that $X = 0$.
+	\item $0 < \theta < 1$ implies that the odds of $Y = 1$, given that $X = 1$, is smaller than the odds that $Y = 1$, given that $X = 0$.
+\end{itemize}
+
+Values of $\theta$ farther from 1 in a given direction represent stronger association.
+
+Note that the association is directed.
+
+\begin{itemize}
+	\item The odd ratio does not change value when the table orientation reverses so that the rows become the columns and the columns become the rows.
+	\item Two values for $\theta$ represent the same strength of association, butin opposite directions, when one value is the inverse of the other.
+\end{itemize}
+
+\subsection{Example: $\theta = 4$ vs. $\theta = 1/4$}
+\begin{itemize}
+	\item When the order of the rows is reversed or the order of the
+	columns is reversed, the new value of $\theta$ is the inverse of the
+	original value.
+	\item This ordering is usually arbitrary, so whether we get 4 or 0.25 for
+	the odds ratio is merely a matter of how we label the rows andcolumns.
+\end{itemize}
+
+\subsection{Equivalent to independence}
+The odd ratio $\theta = 1$ $\iff$ $X$ and $Y$ are independent.
+\begin{proof}
+	\begin{itemize}
+		\item If $X$ and $Y$ are independent, then
+		\begin{align*}
+			\theta_1 &= \frac{\P(Y = 1| X = 1)}{P(Y = 0| X = 1)} = \frac{\P(Y = 1)}{\P(Y = 0)}\\
+			\theta_2 &= \frac{\P(Y = 1| X = 0)}{P(Y = 0| X = 0)} = \frac{\P(Y = 1)}{\P(Y = 0)}\\
+			\theta &= \frac{\theta_1}{\theta_2} = 1
+		\end{align*}
+		\item If $\theta = 1$, then
+		\begin{align*}
+			\frac{\P(Y = 1, X = 1)}{\P(Y = 0, X = 1)} 
+			&= \frac{\P(Y = 1, X = 0)}{\P(Y = 0, X = 0)} \\
+			\frac{\P(Y = 1, X = 1)}{\P(X = 1) - \P(Y = 1, X = 1)} 
+			&= \frac{\P(Y = 1, X = 0)}{\P(X = 0) - \P(Y = 1, X = 0)} \\
+			\frac{\P(Y = 1, X = 1)}{\P(X = 1) - \P(Y = 1, X = 1)} 
+			&= \frac{\P(Y = 1, X = 0)}{1 - \P(X = 1) - \P(Y = 1, X = 0)} \\
+			\P(X = 1, Y = 1) &= \P(X = 1)\P(Y = 1)
+		\end{align*}
+	Hence, we have $X$ and $Y$ are independent.
+	\end{itemize}
+\end{proof}
+
+Therefore the null hypothesis about independence can be reduced to the odd ratio $\theta = 1$.
+
+\subsection{Example: Aspirin vs Cardiovascular Disease}
+
+The Physicians' Health Study was a five-year randomized studytesting whether regular intake of aspirin reduces mortality fromcardiovascular disease. Every other day, the male physiciansparticipating in the study took either one aspirin tablet or a placebo.The study was ``blind'' --- the physicians in the study did not knowwhich type of pill they were taking.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{fig/screenshot003}
+	\caption{Preliminary Report: Findings from the Aspirin Component of the Ongoing Physicians' Health Study. New Engl. J. Med., 318: 262-264, 1988.}
+	\label{fig:screenshot003}
+\end{figure}
+
+\[\theta = \frac{189 \times 10933}{104 \times 10845} = 1.83\]
+
+The estimated odds of Myocardial Infarction for male physicians taking placebo equals
+1.83 times the estimated odds for male physicians taking aspirin. The
+estimated odds were $83\%$ higher for the placebo group.
+
+\subsection{Large Sample Inference}
+If the sample size is large enough, we can use central limit theorem (CLT) for hypothesis testing and estimate the confidence interval.
+
+Note that the range of odd ratio for association is not symmetric, $0 < \theta < 1$ and $1 < \theta < \infty$. So before applying CLT, we need to transform the odd ratio into log-space, i.e. $\lambda = \ln \theta$. 
+
+Then the sample estimation will be $\hat{\lambda} = \ln \hat{\theta}$. The estimated standard deviation is $\hat{\text{SD}} (\hat{\lambda}) = \sqrt{\frac{1}{n_{11}} +\frac{1}{n_{12}} + \frac{1}{n_{21}} + \frac{1}{n_{22}}}$.
+
+The null hypothesis of indepence, $\theta = 1$ can be reduced to $\lambda = 0$.
+
+We can apply CLT to compare $\hat{\lambda}/\hat{\text{SD}} (\hat{\lambda})$ with normal quantile for hypothesis.
+
+Two-sided confidence interval:
+\[
+	\hat{\lambda} - z_{\alpha/2} \hat{\text{SD}}(\hat{\lambda}) 
+	\le \lambda \le
+	\hat{\lambda} + z_{\alpha/2} \hat{\text{SD}}(\hat{\lambda}) 
+\]
+
+Transform to the odd ratio:
+\[
+	\exp{(\hat{\lambda} - z_{\alpha/2} \hat{\text{SD}}(\hat{\lambda}))} 
+	\le \theta \le
+	\exp{(\hat{\lambda} + z_{\alpha/2} \hat{\text{SD}}(\hat{\lambda}))} 
+\]
