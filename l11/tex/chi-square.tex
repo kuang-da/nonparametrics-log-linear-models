@@ -1,0 +1,33 @@
+\section{Chi-squared Test of Independence}
+\begin{itemize}
+	\item Null Hypothesis: $X$ and $Y$ are independent.
+	\item Test Statistic:
+	\[T = \sum_{i=1}^{I}\sum_{j=1}^{J} \frac{(n_{ij} - \frac{n_i n_{.j}}{n})^2}{\frac{n_i n_{.j}}{n}}\]
+	\item Reject the null hypothesis if 
+	\[T > \chi^2_{(I-1)(J-1), 1 - \alpha}\]
+\end{itemize}
+
+\subsection{Example}
+Scarlet fever is a childhood infection that among other symptoms
+gives rise to severe irritation of the nose, throat and ears. 
+
+In a study, six districts A to F were chosen. In each district,
+patients were located, and parents were asked to state the site
+at which they thought their child's irritation was worst.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{fig/screenshot003}
+	\caption{Example of Chi-square Test}
+	\label{fig:screenshot004}
+\end{figure}
+
+
+\lstinputlisting[language=R]{code/l11-exp2.R}
+
+Note that there is warning when running the \texttt{chisq.test}. It is because that the chi-square test is based on CLT but the sample size is not large enough for approximation. 
+
+To have enough sample size, for all cells of the contingency table, we have
+\[\frac{n_i n_{.j}}{n} > 1 \text{ or } > 5.\]
+
+We turn to Fisher Exact test to have better result. But note that the odd ratio is undefined for multinomial distribution.

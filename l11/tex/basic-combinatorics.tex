@@ -1,0 +1,58 @@
+\section{Basic Combinatorics}
+\subsection{Permutation}
+How many possible combinations are there for the computer login password if it must consist of a letter followed by a number?
+
+If a job consist of $k$ separate tasks, the $i$-th of which can be done in $n_i$ ways, $i = 1, \cdots, k$, then the entire job can be done in $n_1 \times n_2 \times \cdots \times n_k$ ways.
+
+\begin{definition}[Factorial]
+	The factorial of a positive integer $n$ is 
+	\[n! = n \times (n-1) \times (n - 2) \times \cdots \times 2 \times 1\]
+	Also, we define, $0! = 1$.
+\end{definition}
+
+\begin{definition}[Permutation]
+A permutation of a set of objects is an ordered arrangement of the objects.
+\end{definition}
+
+\subsection{Combination}
+Order is not always meaningful, for instance the order of a hand of poker cards is actually does not matter.
+
+\begin{definition}[Combination]
+We call a collection of $r$ unordered elements a combination of size $r$. In general, the number of combinations of size $r$ from a group of $n (n \ge r \ge 0)$ objects is ${n \choose r}$.
+
+\[{n \choose r} = \frac{n!}{(n-r)!r!} = \frac{n \times (n - 1) \times (n - r + 1)}{r!}.\]
+\end{definition}
+
+\subsection{Multinomial Coefficients}
+A set of $n$ distinct items is to be divided into $I$ distinct groups of respective size $n_1$, $n_2$, $\dots$, $n_I$, where $\sum_{i=1}^{I} n_i = n$. How many different divisions are possible?
+
+There are the following possible divisions.
+\begin{align*}
+	&{n \choose n_1} {n-n_1 \choose n_2}\cdots{n -n_1 -n_2 - \cdots n_{I-1} \choose n_I}\\
+	=&\frac{n!}{(n-n_1)!n_1!} 
+	\frac{(n-n_1)!}{(n - n_1 - n_2)!n_2!}
+	\cdots
+	\frac{(n - n_1 - n_2 - \cdots - n_{I-1})!}{0!n_I!}\\
+	=& \frac{n!}{n_1! \cdots n_I!}
+\end{align*}
+
+\begin{definition}[Multinomial Coefficient]
+	We define the multinomial coefficient as 
+	\[{n \choose n_1 n_2 \cdots n_I} \equiv \frac{n!}{n_1! \cdots n_I!}\]
+\end{definition}
+
+\subsection{Multinomial Distribution}
+Suppose we have $n$ independent trials, 
+\begin{itemize}
+	\item each trial can result in one of $I$ types of outcomes;
+	\item on each trial the probabilities of the $I$ outcomes are respectively$p_1, p_2, \cdots, p_I$;
+\end{itemize}
+Let $X_i$ be the total number of outcomes of type $I$ in the $n$ trials. Any particular sequence of trials giving rise to $X_1 = x_1$, $X_2 = x_2$, $\cdots$, $X_I = x_I$ occurs with probability $p_1^{x_1}p_2^{x_2} \cdots p_I^{x_I}$.
+
+Recall that there are ${n \choose x_1x_2\cdots x_I}$ such sequences. Therefore the probability for a certain sequence happens is that
+\[p(x_1, \cdots, x_I) = {n \choose x_1 x_2 \cdots x_I} p_1^{x_1}p_2^{x_2} \cdots p_I^{x_I}\]
+
+The marginal distribution of $X_1$ is 
+\[\sum_{x_2, \cdots, x_I} {n \choose x_1 x_2 \cdots x_I} p_1^{x_1}p_2^{x_2} \cdots p_I^{x_I}\]
+
+Also, binomial distribution can be derived from multinomial distribution.
