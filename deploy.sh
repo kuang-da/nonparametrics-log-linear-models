@@ -13,7 +13,8 @@ FILE_NAMES=("2-hypothesis-testing" \
 "8-kendall-spearman-corrlation-coefficient-cohen-kappa" \
 "9-prop-in-tabble-chi-squared-test" \
 "10-odds-ratio-fisher-exact" \
-"11-ij-table-ijk-table")
+"11-ij-table-ijk-table" \
+"12-multivariate-matching-mcnemar-test")
 NUMBER=0
 mkdir "$DIRECTORY/$TARGET_DIR"
 for the_file in "$DIRECTORY"/l*/main.pdf; do

@@ -12,6 +12,7 @@ List of lectures and contents
 - [ ] 0216 L08-Kendall Correlation Coefficient, Spearman Corrlation Coefficient, Cohen's Kappa
 - [x] 0218 L09-Comparing Proportions in 2x2 Tables, Chi-squred Test
 - [x] 0223 L10-Relative Risk, Odds Ratio, Fisher's Exact Test of 2x2 Tables
-- [ ] 0225 L11-Multinomial Distribution, IxJ Tables, 2x2xk Tables, IxJxK Tables
-- [ ] 0302 L12-Multivariate Matching McNemar test
-- [ ] 0304 L13-Multivariate Matching McNemar test
+- [x] 0225 L11-Multinomial Distribution, IxJ Tables, 2x2xk Tables, IxJxK Tables
+- [x] 0302 L12-Multivariate Matching, McNemar test
+- [x] 0304 L12-Multivariate Matching, McNemar test
+- [ ] 0308 L13-Mantel-Haenszel test, Stuart-Maxwell test

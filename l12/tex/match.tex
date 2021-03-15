@@ -1,0 +1,28 @@
+\section{Matching}
+\subsection{Motivation}
+In an observational study, subjects in the treatment group maynot be comparable to those in the control group. Differences inthe outcome between the groups are then not necessarilyattributable to a treatment effect but instead may arise fromdifferences in confounders.
+
+A popular approach to controlling forconfounders is to construct matched pairs through optimalmultivariate matching (Paul R. Rosenbaum. Design of Observational Studies).
+
+\subsection{Eliminating the Confounding by Matching}
+Matching is usually performed by matching a fixed ratio ofcontrols to treatment subjects, most commonly pair (one-to-one)matching. Sometimes one-to-two or one-to-three matching. But we rarely have more than one-to-three matching. It is because that the computation cost increase but only gives us marginal improvement.Alternative forms of matching may bring desirable features such as variable ratio matching and full matching.
+
+For instance, suppose we have 100 treatment patient and 200 control patients, then we select 100 control out of the 200 to match treatment patients. We usually only focus on the matched groups but sometime it is beneficial to do some extra calculation on the unmatched group. The unmatched subjects can also be used to reduce confoundingbias.
+
+After constructing the match, we check if the observedcovariates are balanced so that they have similar distributions,i.e., whether the observed confounders are balanced.
+
+The absolute standardized difference ($|D|$) is usually used to
+check covariate balance and evaluate the match quality.
+
+The numerator of $|D|$ is the absolute difference between thetreated and the (matched) control in covariate means, and thedenominator is the pooled standard deviation before the match,the square root of the average of the two groups' samplevariances. Smaller absolute standardized difference implies closercovariate proximity.
+
+For instance, a $|D| < 0.1$ indicates that the absolute meandifference is within $10\%$ of the pooled standard deviation.
+
+\subsection{Assess the Matching By Hypothesis Testing}
+To assess covariate balance, formal tests can also be used,namely the Wilcoxon rank sum test for continuous variables andFisher's exact test for binary variables.
+
+If the observed confounders are balanced, then, assuming thatthere are no unmeasured confounders, outcome analysis can beconstructed in straightforward ways as in a matched pairrandomized trial.
+
+McNemar's test can be used for binary outcomes.
+
+Wilcoxon signed rank test for continuous outcomes.

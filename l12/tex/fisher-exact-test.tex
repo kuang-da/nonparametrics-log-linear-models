@@ -1,0 +1,20 @@
+\section{Exact Test for Small Samples}If there is no association between tonsillectomy and Hodgkin'sdisease, then the probability is 1/2 that a patient-sibling pair falls inthe upper-right cell and 1/2 that it falls in the lower-left cell, giventhat the pair falls off the main diagonal. Since the pairs areindependent, the ratio 15/22 can be compared with 1/2 by a
+binomial test.
+
+\begin{align*}
+	n_{10} \sim& \operatorname{Binomial}(n^*, p), \text{ where}\\
+	n^* =& n_{10} + n_{01}\\
+	p =& \frac{\pi_{10}}{\pi_{10} + \pi_{01}}
+\end{align*}
+
+The null hypothesis is $H_0: p = 1/2$.
+
+If $n^*$ if large, normal approximation gives
+\[T = \frac{n_{10} - \frac{n^*}{2}}{\sqrt{n^* (\half) (\half)}} = \frac{n_{10} - n_{01}}{\sqrt{n_{10} + n_{01}}}\]
+
+If the alternative hypothesis is two-sided,
+\lstinputlisting[language=R]{code/l12-exp2.R}
+
+If the alternative hypothesis is one-sided,
+\[H_1: \text{the rate of tonsillectomy is higher in patients with Hodgkin'sdisease}\]
+\lstinputlisting[language=R]{code/l12-exp3.R}
